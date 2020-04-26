@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.registrosinvitados.databinding.FragmentRegistryBinding
 
 /**
@@ -16,7 +17,10 @@ class RegistryFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentRegistryBinding>(inflater,
-            R.layout.fragment_title,container,false)
+            R.layout.fragment_registry,container,false)
+        binding.Results.setOnClickListener{view:View ->
+            view.findNavController().navigate(R.id.action_registryFragment_to_resultsFragment)
+        }
         return binding.root
     }
 

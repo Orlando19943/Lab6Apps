@@ -16,7 +16,7 @@ class ResultsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentResultsBinding>(inflater,
-            R.layout.fragment_title,container,false)
+            R.layout.fragment_results,container,false)
         return binding.root
     }
 

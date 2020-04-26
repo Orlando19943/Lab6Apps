@@ -21,7 +21,8 @@
         tools:layout="@layout/fragment_registry">
         <action
             android:id="@+id/action_registryFragment_to_resultsFragment"
-            app:destination="@id/resultsFragment" />
+            app:destination="@id/resultsFragment"
+            app:popUpTo="@id/titleFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultsFragment"
