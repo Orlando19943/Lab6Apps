@@ -8,9 +8,26 @@
         tools:layout="@layout/fragment_title">
 
         <!-- TODO: Update blank fragment layout -->
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="152dp"
+                android:layout_height="288dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="221dp"
+                android:layout_marginEnd="130dp"
+                android:layout_marginRight="130dp"
+                android:layout_marginBottom="51dp"
+                app:layout_constraintBottom_toTopOf="@+id/Registry"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/imge_list" />
 
             <Button
                 android:id="@+id/Registry"
@@ -27,17 +44,6 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher_foreground" />
 
     </FrameLayout>
 </layout>
