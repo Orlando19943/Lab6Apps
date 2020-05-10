@@ -3,9 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/titleFragment"
+        android:icon="@drawable/house_309113_1280"
+        android:title="Inicio" />
+    <item
         android:id="@+id/aboutFragment"
+        android:icon="@drawable/about_icon__the_noun_project__svg"
         android:title="Acerca de" />
     <item
-        android:id="@+id/titleFragment"
-        android:title="Inicio" />
+        android:id="@+id/newGuestFragment"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Agregar invitado" />
 </menu>

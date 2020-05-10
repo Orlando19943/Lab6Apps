@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.registrosinvitados.databinding.FragmentRegistryBinding
-import kotlinx.android.synthetic.main.fragment_registry.*
 import model.Model
 
 /**
@@ -37,7 +36,7 @@ class RegistryFragment : Fragment() {
     }
     @SuppressLint("SetTextI18n")
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.registered -> {
+        R.id.add -> {
             // User chose the "Settings" item, show the app settings UI...
             n += 1
             guest = Model(i = n,registered = "Si")
