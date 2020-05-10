@@ -49,15 +49,10 @@ class TitleFragment : Fragment() {
     }
 
     private fun initializeUi() {
-        // Get the QuotesViewModelFactory with all of it's dependencies constructed
+
         val factory = InjectorUtils.provideGuestViewModelFactory()
-        // Use ViewModelProviders class to create / get already created QuotesViewModel
-        // for this view (activity)
         val viewModel = ViewModelProviders.of(this, factory)
             .get(GuestViewModel::class.java)
-
-        // Observing LiveData from the QuotesViewModel which in turn observes
-        // LiveData from the repository, which observes LiveData from the DAO ☺
         viewModel.getGuest().observe(this, Observer { guest ->
             val stringBuilder = StringBuilder()
             guest.forEach { quote ->
