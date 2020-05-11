@@ -1,4 +1,4 @@
-package com.example.registrosinvitados
+package com.example.registrosinvitados.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
+import com.example.registrosinvitados.R
 import com.example.registrosinvitados.databinding.FragmentAboutBinding
 
 /**

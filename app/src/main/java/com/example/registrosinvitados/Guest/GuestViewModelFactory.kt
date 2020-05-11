@@ -1,4 +1,4 @@
-package com.example.registrosinvitados
+package com.example.registrosinvitados.Guest
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -9,6 +9,8 @@ class GuestViewModelFactory(private val guestRepository: GuestRepository)
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return GuestViewModel(guestRepository) as T
+        return GuestViewModel(
+            guestRepository
+        ) as T
     }
 }

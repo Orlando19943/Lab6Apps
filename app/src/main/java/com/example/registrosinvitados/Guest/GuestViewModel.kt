@@ -1,4 +1,4 @@
-package com.example.registrosinvitados
+package com.example.registrosinvitados.Guest
 
 import androidx.lifecycle.ViewModel
 import model.GuestRepository

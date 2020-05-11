@@ -1,6 +1,7 @@
-package com.example.registrosinvitados
+package com.example.registrosinvitados.Fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -9,7 +10,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import com.example.registrosinvitados.Guest.GuestViewModel
+import com.example.registrosinvitados.Objects.InjectorUtils
+import com.example.registrosinvitados.R
 import com.example.registrosinvitados.databinding.FragmentRegistryBinding
+import com.example.registrosinvitados.databinding.FragmentResultsBinding
 import model.Model
 
 /**
@@ -28,9 +33,6 @@ class RegistryFragment : Fragment() {
             R.layout.fragment_registry,container,false)
         initializeUi()
         setHasOptionsMenu(true)
-
-
-
         return binding.root
     }
 
@@ -41,7 +43,9 @@ class RegistryFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.add -> {
-            val factory = InjectorUtils.provideGuestViewModelFactory()
+
+            val factory =
+                InjectorUtils.provideGuestViewModelFactory()
             val viewModel = ViewModelProviders.of(this, factory)
                 .get(GuestViewModel::class.java)
             viewModel.getGuest().observe(this, Observer { guest ->
@@ -69,7 +73,8 @@ class RegistryFragment : Fragment() {
             true
         }
         R.id.notRegistered -> {
-            val factory = InjectorUtils.provideGuestViewModelFactory()
+            val factory =
+                InjectorUtils.provideGuestViewModelFactory()
             val viewModel = ViewModelProviders.of(this, factory)
                 .get(GuestViewModel::class.java)
             viewModel.getGuest().observe(this, Observer { guest ->
@@ -85,7 +90,7 @@ class RegistryFragment : Fragment() {
                 if(n == guest.size-1){
                     Invitados += "Gracias por usar la aplicacion"
                     view?.findNavController()?.navigate(R.id.action_registryFragment_to_resultsFragment)
-                    Toast.makeText(activity, Invitados, Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(activity, Invitados, Toast.LENGTH_SHORT).show()
                 }
                 n+=1
                 if (n <= guest.size-1){
@@ -105,7 +110,8 @@ class RegistryFragment : Fragment() {
     }
 
     private fun initializeUi() {
-        val factory = InjectorUtils.provideGuestViewModelFactory()
+        val factory =
+            InjectorUtils.provideGuestViewModelFactory()
         val viewModel = ViewModelProviders.of(this, factory)
             .get(GuestViewModel::class.java)
         viewModel.getGuest().observe(this, Observer { guest ->

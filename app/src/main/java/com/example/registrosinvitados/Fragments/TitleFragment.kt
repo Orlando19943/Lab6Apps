@@ -1,4 +1,4 @@
-package com.example.registrosinvitados
+package com.example.registrosinvitados.Fragments
 
 import android.os.Bundle
 import android.view.*
@@ -9,6 +9,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.registrosinvitados.Guest.GuestViewModel
+import com.example.registrosinvitados.Objects.InjectorUtils
+import com.example.registrosinvitados.R
 import com.example.registrosinvitados.databinding.FragmentTitleBinding
 import model.Model
 
@@ -50,7 +53,8 @@ class TitleFragment : Fragment() {
 
     private fun initializeUi() {
 
-        val factory = InjectorUtils.provideGuestViewModelFactory()
+        val factory =
+            InjectorUtils.provideGuestViewModelFactory()
         val viewModel = ViewModelProviders.of(this, factory)
             .get(GuestViewModel::class.java)
         viewModel.getGuest().observe(this, Observer { guest ->
