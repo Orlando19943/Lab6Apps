@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/titleFragment"
+        android:id="@+id/menuFragment"
         android:icon="@drawable/house_309113_1280"
         android:title="Inicio" />
     <item
@@ -14,4 +14,8 @@
         android:id="@+id/newGuestFragment"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="Agregar invitado" />
+    <item
+        android:id="@+id/roleFragment"
+        android:icon="?attr/actionModePasteDrawable"
+        android:title="Roles" />
 </menu>

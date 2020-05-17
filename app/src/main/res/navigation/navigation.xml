@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/titleFragment">
+    app:startDestination="@id/menuFragment">
 
     <fragment
-        android:id="@+id/titleFragment"
+        android:id="@+id/menuFragment"
         android:name="com.example.registrosinvitados.Fragments.TitleFragment"
-        android:label="TitleFragment"
+        android:label="Menu"
         tools:layout="@layout/fragment_title">
         <action
             android:id="@+id/action_titleFragment_to_registryFragment"
@@ -17,27 +17,27 @@
     <fragment
         android:id="@+id/registryFragment"
         android:name="com.example.registrosinvitados.Fragments.RegistryFragment"
-        android:label="RegistryFragment"
+        android:label="Registro"
         tools:layout="@layout/fragment_registry">
         <action
             android:id="@+id/action_registryFragment_to_resultsFragment"
             app:destination="@id/resultsFragment"
-            app:popUpTo="@id/titleFragment" />
+            app:popUpTo="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultsFragment"
         android:name="com.example.registrosinvitados.Fragments.ResultsFragment"
-        android:label="ResultsFragment"
+        android:label="Resultados"
         tools:layout="@layout/fragment_results"/>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.registrosinvitados.Fragments.AboutFragment"
-        android:label="AboutFragment"
+        android:label="Acerca de"
         tools:layout="@layout/fragment_about"/>
     <fragment
         android:id="@+id/newGuestFragment"
         android:name="com.example.registrosinvitados.Guest.NewGuestFragment"
-        android:label="NewGuestFragment"
+        android:label="Ingresar invitado"
         tools:layout="@layout/fragment_new_guest">
         <action
             android:id="@+id/action_newGuestFragment_to_listFragment"
@@ -46,7 +46,20 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.registrosinvitados.Fragments.ListFragment"
-        android:label="ListFragment"
+        android:label="Lista de invitados"
         tools:layout="@layout/fragment_list"/>
-
+    <fragment
+        android:id="@+id/roleFragment"
+        android:name="com.example.registrosinvitados.Fragments.RoleFragment"
+        android:label="Roles"
+        tools:layout="@layout/fragment_role">
+        <action
+            android:id="@+id/action_roleFragment_to_role2Fragment2"
+            app:destination="@id/role2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/role2Fragment"
+        android:name="com.example.registrosinvitados.Fragments.Role2Fragment"
+        android:label="Ingresar Rol"
+        tools:layout="@layout/fragment_role2"/>
 </navigation>

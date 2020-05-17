@@ -8,4 +8,7 @@
     <item
         android:id="@+id/newGuestFragment"
         android:title="Agregar invitado" />
+    <item
+        android:id="@+id/roleFragment"
+        android:title="Roles" />
 </menu>

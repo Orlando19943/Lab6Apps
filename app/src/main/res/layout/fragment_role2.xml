@@ -5,7 +5,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_new_guest">
+        tools:layout="@layout/fragment_role2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,12 +25,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/emailText"
+                android:id="@+id/descriptionText"
                 android:layout_width="284dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="292dp"
+                android:layout_marginTop="192dp"
                 android:ems="10"
-                android:hint="Ingrese el correo electrónico"
+                android:hint="Ingrese la descripcion"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.299"
@@ -38,30 +38,18 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/descriptionText"
-                android:layout_width="284dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="192dp"
+                android:id="@+id/rolText"
+                android:layout_width="288dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="292dp"
                 android:ems="10"
-                android:hint="Ingrese el teléfono"
-                android:inputType="textPersonName"
+                android:hint="Seleccionar orden"
+                android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.299"
+                app:layout_constraintHorizontal_bias="0.308"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/buttonList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#009688"
-                android:text="Ver invitados"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.943"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.937" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </FrameLayout>
 </layout>

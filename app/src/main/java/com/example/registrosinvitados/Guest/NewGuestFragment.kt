@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.registrosinvitados.Objects.InjectorUtils
 import com.example.registrosinvitados.R
-import com.example.registrosinvitados.databinding.FragmentListBinding
 import com.example.registrosinvitados.databinding.FragmentNewGuestBinding
 import kotlinx.android.synthetic.main.fragment_new_guest.*
 import model.Model
@@ -52,8 +51,9 @@ class NewGuestFragment : Fragment() {
                 guest.forEach { guest ->
                     stringBuilder.append("$guest\n\n")
                 }
+
             })
-            val guest = Model(nameText.text.toString(),phoneText.text.toString(),
+            val guest = Model(nameText.text.toString(),descriptionText.text.toString(),
                 emailText.text.toString())
             viewModel.addGuest(guest)
             Toast.makeText(activity, "Se añadio ${guest.toString()}", Toast.LENGTH_SHORT).show()
