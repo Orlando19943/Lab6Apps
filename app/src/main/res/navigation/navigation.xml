@@ -50,7 +50,7 @@
         tools:layout="@layout/fragment_list"/>
     <fragment
         android:id="@+id/roleFragment"
-        android:name="com.example.registrosinvitados.Fragments.RoleFragment"
+        android:name="com.example.registrosinvitados.Role.RoleFragment"
         android:label="Roles"
         tools:layout="@layout/fragment_role">
         <action
@@ -59,7 +59,11 @@
     </fragment>
     <fragment
         android:id="@+id/role2Fragment"
-        android:name="com.example.registrosinvitados.Fragments.Role2Fragment"
+        android:name="com.example.registrosinvitados.Role.Role2Fragment"
         android:label="Ingresar Rol"
-        tools:layout="@layout/fragment_role2"/>
+        tools:layout="@layout/fragment_role2">
+        <action
+            android:id="@+id/action_role2Fragment_to_roleFragment"
+            app:destination="@id/roleFragment" />
+    </fragment>
 </navigation>
