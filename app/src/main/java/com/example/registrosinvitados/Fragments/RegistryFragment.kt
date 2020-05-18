@@ -121,6 +121,7 @@ class RegistryFragment : Fragment() {
             binding.nombreTxt.text = "Nombre: ${guest.get(0).name}"
             binding.telefonoTxt.text = "Telefono: ${guest.get(0).phone}"
             binding.emailTxt.text = "Correo: ${guest.get(0).email}"
+            binding.rolTxt.text = "Rol: ${guest.get(0).role_id}"
         })
 
 

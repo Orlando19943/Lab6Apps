@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.view.isEmpty
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -58,6 +59,9 @@ class NewGuestFragment : Fragment() {
     }
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.add -> {
+            if (binding.spinner.selectedItem == null){
+                Toast.makeText(activity, "Ingrese un rol antes de continuar", Toast.LENGTH_SHORT).show()
+            }else {
             roleText = binding.spinner.selectedItem as String
             val factory =
                 InjectorUtils.provideGuestViewModelFactory()
@@ -70,18 +74,17 @@ class NewGuestFragment : Fragment() {
                 }
 
             })
-
-
             val guest = Model(nameText.text.toString(),descriptionText.text.toString(),
                 emailText.text.toString(),roleText)
             viewModel.addGuest(guest)
             Toast.makeText(activity, "Se añadio ${guest.toString()}", Toast.LENGTH_SHORT).show()
 
-
+            }
             true
         }
 
         else -> super.onOptionsItemSelected(item)
+
     }
     private fun append(arr: Array<String>, element: String): Array<String> {
         val list: MutableList<String> = arr.toMutableList()

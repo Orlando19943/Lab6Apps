@@ -65,12 +65,28 @@
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
+                android:layout_width="236dp"
+                android:layout_height="47dp"
+                android:layout_marginBottom="128dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.377"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.545" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                app:layout_constraintVertical_bias="0.231" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="282dp"
+                android:layout_height="39dp"
+                android:text="Seleccione el rol"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.31"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailText"
+                app:layout_constraintVertical_bias="0.175" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

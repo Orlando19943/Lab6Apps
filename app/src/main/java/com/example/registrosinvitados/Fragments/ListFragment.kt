@@ -42,11 +42,13 @@ class ListFragment : Fragment() {
             .get(GuestViewModel::class.java)
         viewModel.getGuest().observe(this, Observer { guest ->
             val stringBuilder = StringBuilder()
-            guest.forEach { quote ->
-                stringBuilder.append("$quote\n\n")
+            var n = 1
+            guest.forEach { guest ->
+                stringBuilder.append("Invitado: $n\nNombre: ${guest.name}\nTelefono: ${guest.phone}\n" +
+                        "Correo: ${guest.email}\nRol: ${guest.role_id}\n\n")
+                n++
             }
             binding.textList.text=stringBuilder.toString()
-            Toast.makeText(activity, stringBuilder.toString(), Toast.LENGTH_SHORT).show()
 
         })
 

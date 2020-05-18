@@ -31,6 +31,22 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/rolTxt"
+                android:layout_width="277dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="77dp"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="452dp"
+                android:layout_marginEnd="276dp"
+                android:layout_marginRight="276dp"
+                android:text="Rol:"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.278"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/telefonoTxt"
                 android:layout_width="277dp"
                 android:layout_height="42dp"
