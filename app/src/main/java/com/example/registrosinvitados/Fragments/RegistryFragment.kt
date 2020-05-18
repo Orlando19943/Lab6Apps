@@ -27,8 +27,7 @@ class RegistryFragment : Fragment() {
     private lateinit var binding:FragmentRegistryBinding
     private val guest = Model();
     @SuppressLint("SetTextI18n")
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate<FragmentRegistryBinding>(inflater,
             R.layout.fragment_registry,container,false)
         initializeUi()

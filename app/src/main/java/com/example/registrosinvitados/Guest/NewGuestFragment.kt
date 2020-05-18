@@ -1,7 +1,10 @@
 package com.example.registrosinvitados.Guest
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
@@ -20,15 +23,28 @@ import model.Model
 class NewGuestFragment : Fragment() {
 
     private lateinit var binding: FragmentNewGuestBinding
-    private var text:String = ""
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val binding = DataBindingUtil.inflate<FragmentNewGuestBinding>(
+    private var m:Int = 0
+    private var adapter:ArrayAdapter<String>? = null
+    private var roleText:String = ""
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val factory =
+            InjectorUtils.provideGuestViewModelFactory()
+        val viewModel = ViewModelProviders.of(this, factory)
+            .get(GuestViewModel::class.java)
+        binding = DataBindingUtil.inflate<FragmentNewGuestBinding>(
             inflater,
             R.layout.fragment_new_guest, container, false
         )
+        viewModel.getRole().observe(this, Observer { role ->
+            m = role.size
+            val stringBuilder = StringBuilder()
+            var roleList = arrayOf<String>()
+            role.forEach { role ->
+                roleList = append (roleList,role.name)
+            }
+            adapter = context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_item, roleList) }
+            binding.spinner.adapter = adapter
+        })
         binding.buttonList.setOnClickListener{view:View ->
             view.findNavController().navigate(R.id.action_newGuestFragment_to_listFragment)
     }
@@ -42,6 +58,7 @@ class NewGuestFragment : Fragment() {
     }
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.add -> {
+            roleText = binding.spinner.selectedItem as String
             val factory =
                 InjectorUtils.provideGuestViewModelFactory()
             val viewModel = ViewModelProviders.of(this, factory)
@@ -53,8 +70,10 @@ class NewGuestFragment : Fragment() {
                 }
 
             })
+
+
             val guest = Model(nameText.text.toString(),descriptionText.text.toString(),
-                emailText.text.toString())
+                emailText.text.toString(),roleText)
             viewModel.addGuest(guest)
             Toast.makeText(activity, "Se añadio ${guest.toString()}", Toast.LENGTH_SHORT).show()
 
@@ -63,6 +82,11 @@ class NewGuestFragment : Fragment() {
         }
 
         else -> super.onOptionsItemSelected(item)
+    }
+    private fun append(arr: Array<String>, element: String): Array<String> {
+        val list: MutableList<String> = arr.toMutableList()
+        list.add(element)
+        return list.toTypedArray()
     }
 
 }
